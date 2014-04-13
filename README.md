@@ -5,6 +5,6 @@ play-push (Play Framework 1.2.5.3)
 
 For developer
 
-    play desp --sync
+    play deps --sync
     play eclipsify
     play run
