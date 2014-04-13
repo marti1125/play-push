@@ -16,16 +16,16 @@ public class Application extends Controller {
         render();
     }
     
-    public static void pusherNotification(){
+    public static void pusherNotification(String message){
     	Pusher pusher = new Pusher("71672","98a511e1fac903861c00","88fe0ac88ada93cbe91c");
     	//Pusher pusher = new Pusher("appID","key","secret");
     	
     	JsonObject  jsonMessage = new JsonObject();
-    	jsonMessage.addProperty("message", "Hola!!!!!!!!!");
+    	jsonMessage.addProperty("message", message);
     	
-    	String message = jsonMessage.toString();
+    	String jsonData = jsonMessage.toString();
     	
-    	pusher.trigger("test_channel", "my_event", message);
+    	pusher.trigger("test_channel", "my_event", jsonData);
     }
 
 }

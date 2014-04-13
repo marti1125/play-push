@@ -1,4 +1,15 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
-#{welcome /}
+<h3>Pusher</h3>
+<textarea id="pusher"></textarea>
+<br/>
+<a href="" id="btnPusher">Enviar</a>
+
+<script>
+
+$("#btnPusher").click(function(){
+	$.post("Application/pusherNotification?message=" + $("#pusher").val(), function(){});
+});
+
+</script>
